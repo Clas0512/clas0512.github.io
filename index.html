@@ -12,13 +12,37 @@
 
 	<link rel="stylesheet" href="css/style.css">
 	<style>
+
+		table,
+		td
+		{
+			background-color: lightgray;
+			border: 1px solid black;
+		}
+
+		th {
+			font-weight: 1000;
+			font-weight: bold;
+			color: black;
+			background-color: lightgray;
+			border: 1px solid black;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 85%;
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
 		form {
 			margin: 0 auto;
 			width: 250px;
 		}
 
 		body {
-			background-image: url("./images/thumb.png");
+			background-image: url("./images/pexels-sanej-prasad-suwal-7806169.jpg");
 			background-size: cover;
 			background-repeat: no-repeat;
 		}
@@ -62,31 +86,43 @@
 
 <body>
 
-	<h1 style="text-align: center">Depremzedeler İçin Barınma Merkezleri</h1>
 	<br>
 	<br>
-	<form action="sehir-filtresi" style="text-align: ;center">
+	<h1 style="text-align: center; font-weight: bold;">Depremzedeler İçin Barınma Merkezleri</h1>
+	<!--<form action="sehir-filtresi" style="text-align: ;center">
 		<input type="text" name="search" placeholder="Arama yapın... ">
 		<button type="submit">Ara</button>
-	</form>
+	</form>-->
+	<br>
 	<br>
 	<br>
 	<div>
-		<ol>
-			<li>Adana</li>
-			<li>List item<ol>
-					<li>List item</li>
-					<li>List item</li>
-				</ol>
-			</li>
-			<li>Adıyaman</li>
-			<li>List item<ol>
-					<li>List item</li>
-					<li>List item</li>
-					<li>List item</li>
-				</ol>
-			</li>
-		</ol>
+		<table>
+			<tr>
+				<th>İL</th>
+				<th>AÇIKLAMA</th>
+				<th>ADRES</th>
+				<th>TEL NO</th>
+			</tr>
+			<tr>
+				<td>Adıyaman</td>
+				<td>Satır 1, Sütun 2</td>
+				<td>Satır 1, Sütun 3</td>
+				<td>Sa müco, sadasd</td>
+			</tr>
+			<tr>
+				<td>Adana</td>
+				<td>Satır 2, Sütun 2</td>
+				<td>Satır 2, Sütun 3</td>
+				<td>sa sasa</td>
+			</tr>
+			<tr>
+				<td>Kahramanmaraş</td>
+				<td>asdasda</td>
+				<td>asdasdf</td>
+				<td>asdasdf</td>
+			</tr>
+		</table>
 	</div>
 
 </body>
