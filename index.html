@@ -1,17 +1,49 @@
 <!doctype html>
 <html lang="en">
-  <head>
-  	<title>Ücretsiz Barınma Merkezleri</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<head>
+		<title>Ücretsiz Barınma Merkezleri</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<link rel="stylesheet" href="css/style.css">
 
-	</head>
+		<style>
+			ol {
+				list-style: none;
+				counter-reset: my-awesome-counter;
+			}
+			li {
+				counter-increment: my-awesome-counter;
+				margin: 0.25rem;
+			}
+			li::before {
+				content: counter(my-awesome-counter);
+				background: #662974;
+				width: 2rem;
+				height: 2rem;
+				border-radius: 50%;
+				display: inline-block;
+				line-height: 2rem;
+				color: white;
+				text-align: center;
+				margin-right: 0.5rem;
+			}
+			ol ol li::before {
+				background: #DE51FF;
+			}
+			ol ol ol li::before {
+				background: #EE9EFF;
+			}
+			
+			body {
+				font-family: 'PT Serif', serif;
+			}
+		</style>
+    </head>
 	<body>
 		<ol>
 			<li>List item</li>
