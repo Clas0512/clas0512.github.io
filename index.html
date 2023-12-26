@@ -1,20 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Text Animations</title>
-  </head>
-  <body>
-    <h5>
-      Will you
-      <span
-        class="txt-rotate"
-        data-period="2000"
-        data-rotate='[ "MARRY MEEE ECE MMMMM ?" ]'
-      ></span>
-      <script src="main.js"></script>
-    </h5>
-  </body>
+<head>
+  <title>Abena Software</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+  <a class="device-notification--logo" href="Abena software">
+    <img src="assets/img/Untitled-4321.png" alt="Global">
+    <p>Adem Berke Nargul</p>
+  </a>
+  <p class="device-notification--message">Global has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed.</p>
+</div>
+
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="https://clas0512.github.io/">
+            <img src="assets/img/Abn Logo png buyuk.png" width="150" alt="Global">
+          </a>
+          <p>Abena Software</p>
+		  <a class="header--logo" href="https://clas0512.github.io/qr-code-generator-page">
+			<p>QR Generator</p>
+		  </a>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Home</span></li>
+            <li><span>Educations</span></li>
+            <li><span>Social Media</span></li>
+            <li><span>Contact</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <h1>Hi,<br></h1>
+                <!--- <button class="cta">Hire Us --->
+                  <div style="text-align: left;"><p>  My name is Adem Berke Nargul and I'm a Software Developer.<br>I'm 20 years old. I like to coding, do anything about technology.</p></div>
+                  <!--svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg-->
+                  <!--span class="btn-background"></span-->
+                  <img src="assets/img/beatzbygirlz.png" alt="Welcome">
+                </div>
+                <!-- <img src="assets/img/Abn Logo png buyuk.png" width="400" height="200" alt="asd"> -->
+              <!--<div class="intro--options">
+                <a href="#0">
+                  <h3>&#10084;</h3>
+                  <p>&#10084;</p>
+                </a>
+                <a href="#0">
+                  <h3>&#10084;</h3>
+                  <p>&#10084;</p>
+                </a>
+                <a href="#0">
+                  <h3>Paul &amp; shark</h3>
+                  <p>&#10084;</p>
+                </a>
+              </div> -->
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="work">
+              <h2>Educations</h2>
+              <div class="work--lockup">
+                <ul class="slider">
+                  <li class="slider--item slider--item-left">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/Istanbul_Uni.png" alt="Istanbul University">
+                      </div>
+                      <p class="slider--item-title">Istanbul University</p>
+                      <p class="slider--item-description">I am studying Pc Programmer at Istanbul University. Maybe i need a diploma in Turkey.</p>
+                    </a>
+                  </li>
+                  <li class="slider--item slider--item-center">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/42.jpg" alt="Ecole 42">
+                      </div>
+                      <p class="slider--item-title">Ecole 42</p>
+                      <p class="slider--item-description">I am studying Computer Science/Computer Engineering at 42 Istanbul and this is my main education. 42 is a software school, it has no teacher because students are teacher in there. The education model focuses on project-based learning and teamwork, rather than theoretical education.</p>
+                    </a>
+                  </li>
+                  <li class="slider--item slider--item-right">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/Istanbul_Aydin_University_logo.svg.png" alt="Istanbul Aydin University">
+                      </div>
+                      <p class="slider--item-title">Istanbul Aydin University</p>
+                      <p class="slider--item-description">I went to preparatory class of Software Developer for 1 year. Then i left remaining of school. Because i noticed that i can learn anything about software faster in other ways.</p>
+                    </a>
+                  </li>
+                </ul>
+                <div class="slider--prev">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+                  </g>
+                  </svg>
+                </div>
+                <div class="slider--next">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <!-- <div class="about--banner">
+                  <span>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                  </span>
+                </a>
+                <img src="assets/img/map for img of github.io website.png" alt="About Us">
+              </div> -->
+              <div>
+                <h2>Who am I ?</h2>
+                <p>I'm 19 years old and i'm a software developer and musician. I'd like to be a
+                  pilot but when i come the decision point of my life (that is University), i decided to be a Software
+                  Engineer. Because i don't want to work with people, work with computer. Then i choose a software
+                  development department at Aydin University.</p>
+                <p>I started the English preparatory school. By the way i knew the 42 schools, because i heard from my
+                  friends but i couldn't register for 42 because i was 17. After 1. semester of preparatory, i started
+                  the 42 Piscine. It was so hard for me because i don't know anything about software. But i made it.
+                  Also i joined a lot of hackathon and ideathon. Thanks to these, i gained many skills(teamwork,
+                  leadership, quick adaptation vs.) and i improved my self a lot.
+                </p>
+              </div class="about--banner">
+              <div class="about--options">
+                <a href="https://github.com/Clas0512">
+                  <h3>Github</h3>
+                </a><br>
+                <a href="https://www.linkedin.com/in/ademberkenargul">
+                  <h3>Linkedin</h3>
+                </a><br>
+                <a href="https://www.instagram.com/admbrke">
+                  <h3>Instagram</h3>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="contact">
+              <div class="contact--lockup">
+                <div class="modal">
+                  <div class="modal--information">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=a.berke.nrgl@hotmail.com" target="_blank">Click for Send Mail</a>
+                  </div>
+                  <!-- <ul class="modal--options">
+                    <li><a href="Mail: a.berke.nrgl@hotmail.com">Contact Us</a></li>
+                  </ul> -->
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="hire">
+              <h2>You want us to do</h2>
+              <!-- checkout formspree.io for easy form setup -->
+              <form class="work-request">
+                <div class="work-request--information">
+                  <div class="information-name">
+                    <input id="name" type="text" spellcheck="false">
+                    <label for="name">Name</label>
+                  </div>
+                  <div class="information-email">
+                    <input id="email" type="email" spellcheck="false">
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+                <input type="submit" value="Send Request">
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <ul class="outer-nav">
+    <li class="is-active">Home</li>
+    <li>Educations</li>
+    <li>Social Media</li>
+    <li>Contact</li>
+  </ul>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+</body>
 </html>
