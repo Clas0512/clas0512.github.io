@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b0a12">
+<title>Breakout</title>
+<link rel="stylesheet" href="../shared/game.css">
+</head>
+<body>
+<div class="game">
+  <header class="hud">
+    <h1 class="hud-title" data-i18n="title">Breakout</h1>
+    <div class="hud-stat">
+      <span class="hud-label" data-i18n="score">Score</span>
+      <span class="hud-value" id="score">0</span>
+    </div>
+    <div class="hud-stat">
+      <span class="hud-label" data-i18n="best">Best</span>
+      <span class="hud-value" id="best">0</span>
+    </div>
+    <div class="hud-actions">
+      <button class="icon-btn" id="btn-mute" type="button" data-muted="true" data-i18n-aria="soundOn" aria-label="Turn sound on" title="Turn sound on">
+        <svg class="ic ic-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>
+        <svg class="ic ic-silent" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+      </button>
+      <button class="icon-btn" id="btn-pause" type="button" data-paused="false" data-i18n-aria="pauseBtn" aria-label="Pause (P)" title="Pause (P)">
+        <svg class="ic ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5v13M15.5 5.5v13"/></svg>
+        <svg class="ic ic-play ic-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+      </button>
+    </div>
+  </header>
+  <main class="stage" id="stage">
+    <canvas id="board" role="img" data-i18n-aria="canvasLabel" aria-label="Breakout"></canvas>
+    <div class="overlay" id="overlay" role="dialog" aria-labelledby="ov-title" hidden>
+      <div class="card">
+        <h2 id="ov-title"></h2>
+        <p id="ov-text"></p>
+        <button class="btn" id="ov-btn" type="button"></button>
+        <p class="hint" id="ov-hint"></p>
+      </div>
+    </div>
+  </main>
+</div>
+<noscript>This game needs JavaScript.</noscript>
+<script src="../shared/kit.js"></script>
+<script src="breakout.js"></script>
+</body>
+</html>

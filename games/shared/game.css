@@ -1,0 +1,256 @@
+/* Shared theme + layout for the Arcade games (Snake, Breakout, Pong).
+   One HUD bar, one stage that letterboxes a fixed-resolution canvas, one overlay style. */
+
+:root {
+  --bg: #0b0a12;
+  --surface: #13111c;
+  --surface-2: #1a1726;
+  --border: #262236;
+  --text: #e9e6f5;
+  --muted: #9690ad;
+  --accent: #a78bfa;
+  --accent-strong: #8b5cf6;
+  --ok: #6ee7b7;
+  --danger: #fb7185;
+
+  --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, "Cascadia Code", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --radius: 14px;
+  --hud-h: 56px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;            /* the page itself must never scroll */
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+[hidden] { display: none !important; }
+
+.game {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;               /* fallback */
+  height: 100dvh;
+  background:
+    radial-gradient(900px 500px at 50% -10%, rgba(139, 92, 246, 0.10), transparent 70%),
+    var(--bg);
+}
+
+/* ---------- HUD bar ---------- */
+
+.hud {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: var(--hud-h);
+  padding: 0 max(12px, env(safe-area-inset-right)) 0 max(14px, env(safe-area-inset-left));
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.hud-title {
+  margin: 0 auto 0 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.hud-title::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.7);
+}
+/* Inside the site's viewer the toolbar already names the game: keep the h1 for screen readers only. */
+.is-embedded .hud-title {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.is-embedded .hud-stat:first-of-type { margin-left: auto; }
+
+.hud-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.1;
+  min-width: 0;
+}
+.hud-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.hud-value {
+  margin-top: 3px;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+.hud-stat:nth-of-type(2) .hud-value { color: var(--accent); }
+
+.hud-actions { display: flex; gap: 8px; margin-left: 2px; }
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s, transform 0.1s;
+}
+.icon-btn:hover:not(:disabled) { color: var(--text); border-color: var(--accent-strong); }
+.icon-btn:active:not(:disabled) { transform: scale(0.94); }
+.icon-btn:disabled { opacity: 0.4; cursor: default; }
+.icon-btn:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.ic {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ic-fill { fill: currentColor; }
+/* Each toggle button carries both icons; its data attribute picks one. */
+#btn-pause .ic-play,
+#btn-mute .ic-silent { display: none; }
+#btn-pause[data-paused="true"] .ic-pause,
+#btn-mute[data-muted="true"] .ic-sound { display: none; }
+#btn-pause[data-paused="true"] .ic-play,
+#btn-mute[data-muted="true"] .ic-silent { display: block; }
+#btn-mute:not([data-muted="true"]) { color: var(--ok); }
+
+/* ---------- Stage + canvas ---------- */
+
+.stage {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  touch-action: none;          /* the stage owns all touch gestures */
+}
+
+#board {
+  display: block;
+  background: var(--surface);
+  border-radius: 12px;
+  touch-action: none;
+  box-shadow:
+    0 0 0 1px var(--border),
+    0 18px 50px rgba(0, 0, 0, 0.5),
+    0 0 70px rgba(139, 92, 246, 0.08);
+}
+
+/* ---------- Overlay (Start / Paused / Game over / Won) ---------- */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(11, 10, 18, 0.5);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  cursor: pointer;
+  animation: fade-in 0.18s ease-out;
+}
+
+.card {
+  width: min(360px, 100%);
+  padding: 24px 24px 20px;
+  text-align: center;
+  cursor: default;
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 50px rgba(139, 92, 246, 0.12);
+  animation: rise-in 0.22s ease-out;
+}
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.card .hint { margin-top: 14px; font-size: 12px; opacity: 0.85; }
+
+.btn {
+  margin-top: 18px;
+  min-width: 150px;
+  min-height: 40px;
+  padding: 12px 24px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--bg);
+  background: var(--accent);
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 26px rgba(167, 139, 250, 0.35);
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+.btn:hover { background: #b9a2fc; box-shadow: 0 0 32px rgba(167, 139, 250, 0.5); }
+.btn:active { transform: scale(0.97); }
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 480px) {
+  :root { --hud-h: 52px; }
+  .hud { gap: 10px; }
+  .hud-title { font-size: 14px; gap: 7px; }
+  .hud-value { font-size: 16px; }
+  .hud-label { font-size: 9px; letter-spacing: 0.06em; }
+  .hud-actions { gap: 6px; }
+  .stage { padding: 8px; }
+}
+@media (max-height: 420px) {
+  :root { --hud-h: 46px; }
+  .stage { padding: 6px; }
+  .card { padding: 14px 18px; }
+  .card h2 { font-size: 20px; }
+  .btn { margin-top: 10px; padding: 9px 20px; }
+  .card .hint { margin-top: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay, .card { animation: none; }
+  .icon-btn, .btn { transition: none; }
+}
