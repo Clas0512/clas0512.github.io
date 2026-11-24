@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="meta.title">Adem Berke Nargül · Cloud &amp; AI Engineer</title>
-<meta name="description" data-i18n-attr="content:meta.desc" content="Portfolio of Adem Berke Nargül, a Cloud &amp; AI engineer: backend, cloud infrastructure and AI evaluation at xAI, plus hand-written browser games and simulations (a raycaster ported from a C project, Verlet physics, Snake, Breakout, Pong) built around testable game state.">
+<title data-i18n="meta.title">Adem Berke Nargül · Software Engineer, AI Agent Evaluation &amp; Game/Simulation</title>
+<meta name="description" data-i18n-attr="content:meta.desc" content="Portfolio of Adem Berke Nargül, a software engineer in AI agent evaluation and game/simulation programming: agent tasks and evaluation at xAI, plus hand-written browser games and simulations (a raycaster ported from a C project, Verlet physics, Snake, Breakout, Pong) built around testable game state.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0b0a12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -41,9 +41,9 @@
   <!-- Hero -->
   <section class="hero wrap" id="hero" aria-labelledby="hero-name">
     <div class="hero__text">
-      <p class="hero__role" data-i18n="hero.role">Cloud &amp; AI Engineer</p>
+      <p class="hero__role" data-i18n="hero.role">Software Engineer · AI Agent Evaluation &amp; Game/Simulation Programming</p>
       <h1 class="hero__name" id="hero-name"><span>Adem Berke</span> <span>Nargül</span></h1>
-      <p class="hero__intro" data-i18n="hero.intro">I build backends and cloud infrastructure, and at xAI I write and evaluate software-engineering tasks for AI coding agents. I also write games and simulations built to be debugged and checked: fixed-timestep loops, explicit state machines and collision that doesn’t tunnel. The raycaster in the Lab below is the algorithm from Cub3D, a C project I built with a teammate at 42 Istanbul, rewritten in JavaScript.</p>
+      <p class="hero__intro" data-i18n="hero.intro">I work where AI agent evaluation meets interactive systems. At xAI I designed and evaluated multi-step software-engineering tasks for AI agents, including web-game tasks. I also write games and simulations built to be debugged and checked: fixed-timestep loops, explicit state machines and collision that doesn’t tunnel. The raycaster in the Lab below is the algorithm from Cub3D, a C project I built with a teammate at 42 Istanbul, rewritten in JavaScript.</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#projects" data-i18n="hero.ctaProjects">Projects</a>
         <a class="btn btn--ghost" href="https://github.com/Clas0512" rel="noopener noreferrer" data-i18n="hero.ctaGithub">GitHub</a>
@@ -217,15 +217,15 @@
 
     <ol class="timeline">
       <li class="job">
-        <p class="job__when mono"><time datetime="2026">2026</time></p>
+        <p class="job__when mono"><time datetime="2026-01" data-i18n-date>Jan 2026</time> <span class="dash">–</span> <time datetime="2026-11" data-i18n-date>Nov 2026</time></p>
         <div class="job__body">
           <h3 class="job__role" data-i18n="exp.j1.role">Software Engineer Tutor</h3>
           <p class="job__org" data-i18n="exp.j1.org">xAI · US, remote</p>
           <ul class="job__points">
-            <li data-i18n="exp.j1.b1">Write and evaluate complex software-engineering tasks for AI coding agents, including tasks that take advanced models more than 15 minutes of reasoning.</li>
-            <li data-i18n="exp.j1.b2">Review model solutions across languages for correctness, reasoning depth, instruction following and debugging, and work out the correct engineering fix.</li>
-            <li data-i18n="exp.j1.b3">Work with coding agents, computer-control agents and agents that operate everyday software, with a focus on reliability and task completion.</li>
-            <li data-i18n="exp.j1.b4">Wrote browser and web games as part of this work.</li>
+            <li data-i18n="exp.j1.b1">Authored complex, multi-step software-engineering tasks for coding agents and agentic environments, including tasks that took advanced models more than 15 minutes of reasoning.</li>
+            <li data-i18n="exp.j1.b2">Evaluated agent outputs for correctness, instruction following, code accuracy, reasoning depth and debugging; diagnosed failures and worked out reference solutions.</li>
+            <li data-i18n="exp.j1.b3">Assessed coding, computer-control and software-use agents on interactive applications, with a focus on reliability and task completion.</li>
+            <li data-i18n="exp.j1.b4">Built browser games for web-game tasks for AI agents and checked gameplay behavior and resulting game states against the task requirements.</li>
           </ul>
           <ul class="tags" data-i18n-attr="aria-label:exp.tags" aria-label="Technologies">
             <li data-i18n="tag.agentEval">Agent evaluation</li><li data-i18n="tag.codeReview">Code review</li><li data-i18n="tag.multiLang">Multi-language</li><li data-i18n="tag.games">Browser games</li>
@@ -323,7 +323,7 @@
           <h3>so_long</h3>
           <p class="proj__meta mono" data-i18n="proj.solong.meta">42 Istanbul</p>
         </div>
-        <p data-i18n="proj.solong.text">A 2D tile-map game in C on MiniLibX. Maps are validated before play, and a flood fill checks that every collectible and the exit can actually be reached. Movement, wall collision, collecting and the win condition are handled in the game’s state logic, and all memory is managed by hand.</p>
+        <p data-i18n="proj.solong.text">A top-down 2D tile-map game in C on MiniLibX: collect every item, then reach the exit, with a move counter. Before a map loads it must be rectangular and enclosed by walls, with exactly one player, one exit and at least one collectible, and a flood fill checks that every collectible and the exit can be reached, so every accepted level is winnable. All memory is managed by hand.</p>
         <ul class="tags" data-i18n-attr="aria-label:exp.tags" aria-label="Technologies">
           <li>C</li><li>MiniLibX</li><li>Flood fill</li><li data-i18n="tag.mapValid">Map validation</li><li data-i18n="tag.memory">Manual memory</li>
         </ul>
@@ -421,7 +421,7 @@
       <div class="about__skills">
         <h3 class="about__sub" data-i18n="about.skills">Skills</h3>
         <dl class="skills">
-          <div class="skills__row"><dt data-i18n="sk.lang">Programming languages</dt><dd>Python, Go, C++, C</dd></div>
+          <div class="skills__row"><dt data-i18n="sk.lang">Programming languages</dt><dd>C, C++, JavaScript, TypeScript, Python, Go, HTML/CSS</dd></div>
           <div class="skills__row"><dt data-i18n="sk.games">Games &amp; simulation</dt><dd><span data-i18n="sk.gamesList">Fixed-timestep loops, state machines, 2D collision (sub-stepping, closest point), DDA raycasting, Verlet constraint physics, flood-fill map validation, Canvas 2D, MiniLibX</span></dd></div>
           <div class="skills__row"><dt data-i18n="sk.web">Web &amp; API</dt><dd><span>RESTful APIs, JWT, CORS, CSRF</span><span><span class="skills__lbl" data-i18n="sk.backend">Backend</span> Django, Flask, Gin, Fiber, Goroutines</span><span><span class="skills__lbl" data-i18n="sk.frontend">Frontend</span> React.js, WordPress, Bootstrap, TailwindCSS</span></dd></div>
           <div class="skills__row"><dt data-i18n="sk.cloud">Cloud &amp; infrastructure</dt><dd>AWS (EC2, S3), Azure, Docker, Vagrant, Terraform, Redis, RabbitMQ, K3s, Kubernetes</dd></div>
@@ -445,10 +445,10 @@
     </div>
 
     <div class="contact__mail">
-      <a class="contact__addr" href="mailto:ademberke@mail.com" data-i18n-attr="aria-label:contact.mailLabel" aria-label="Send an email to ademberke@mail.com">ademberke@mail.com</a>
+      <a class="contact__addr" href="mailto:mrb.bn@hotmail.com" data-i18n-attr="aria-label:contact.mailLabel" aria-label="Send an email to mrb.bn@hotmail.com">mrb.bn@hotmail.com</a>
       <div class="contact__tools">
-        <button type="button" class="btn btn--small" id="copy-mail" data-copy="ademberke@mail.com" data-i18n="contact.copy">Copy address</button>
-        <a class="btn btn--small btn--ghost" href="mailto:ademberke@mail.com" data-i18n="contact.write">Write an email</a>
+        <button type="button" class="btn btn--small" id="copy-mail" data-copy="mrb.bn@hotmail.com" data-i18n="contact.copy">Copy address</button>
+        <a class="btn btn--small btn--ghost" href="mailto:mrb.bn@hotmail.com" data-i18n="contact.write">Write an email</a>
         <span class="contact__status mono" id="copy-status" role="status" aria-live="polite"></span>
       </div>
     </div>
