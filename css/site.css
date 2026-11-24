@@ -452,6 +452,11 @@ kbd, .keys__word {
 .cab__body > p { color: #c9c4dc; font-size: var(--fs-sm); }
 .cab__keys { color: var(--muted) !important; }
 .cab__keys .mono { display: block; color: var(--accent); margin-bottom: .1rem; }
+.notes { font-size: var(--fs-xs); color: var(--muted); border-top: 1px solid var(--border); padding-top: .6rem; }
+.notes summary { cursor: pointer; color: var(--accent); font-family: var(--mono); width: fit-content; }
+.notes summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--r-sm); }
+.notes p { margin-top: .5rem; line-height: 1.55; overflow-wrap: anywhere; }
+.notes__k { display: block; color: var(--text); font-weight: 600; }
 .cab__play { margin-top: auto; align-self: flex-start; min-width: 7rem; }
 
 @media (max-width: 900px) {
