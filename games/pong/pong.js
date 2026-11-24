@@ -381,7 +381,7 @@
   booted = true;
   kit.loop({ hz: 60, update, render }).start();
 
-  // Test seam used by the automated checks (they read and drive the simulation through it); not used by the game itself.
+  // Test seam for automated checks and debugging (reads and drives the simulation); not used by the game itself.
   window.__game = {
     fsm, ball, player, cpu, scores, AI, BALL_MAX, W, H,
     get speed() { return speed; }, get portrait() { return portrait; }, serve, moveBall,

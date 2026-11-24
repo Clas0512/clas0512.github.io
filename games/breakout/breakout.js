@@ -452,7 +452,7 @@
   onStateChange('ready');
   kit.loop({ hz: 60, update, render }).start();
 
-  // Test seam used by the automated checks (they read and drive the simulation through it); not used by the game itself.
+  // Test seam for automated checks and debugging (reads and drives the simulation); not used by the game itself.
   window.__game = {
     fsm, ball, paddle, MAX_SPEED, BALL_R, W, H,
     get bricks() { return bricks; }, get lives() { return lives; }, get score() { return score; }, get level() { return level; },

@@ -338,6 +338,6 @@
   onStateChange('ready');
   kit.loop({ hz: 60, update, render }).start();
 
-  // Test seam used by the automated checks (they read and drive the model through it); not used by the game itself.
+  // Test seam for automated checks and debugging (reads and drives the model); not used by the game itself.
   window.__game = { Board, fsm, get board() { return board; }, get score() { return score; } };
 })();

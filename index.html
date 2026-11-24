@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="meta.title">Adem Berke Nargül · Cloud &amp; AI Engineer</title>
-<meta name="description" data-i18n-attr="content:meta.desc" content="Portfolio of Adem Berke Nargül, a Cloud &amp; AI engineer: backend, cloud infrastructure, AI evaluation, and low-level C/C++, including a raycasting engine built with a teammate at 42 Istanbul. Live simulations and browser games included.">
+<title data-i18n="meta.title">Adem Berke Nargül · Software Engineer, AI Agent Evaluation &amp; Game/Simulation</title>
+<meta name="description" data-i18n-attr="content:meta.desc" content="Portfolio of Adem Berke Nargül, a software engineer in AI agent evaluation and game/simulation programming: agent tasks and evaluation at xAI, plus hand-written browser games and simulations (a raycaster ported from a C project, Verlet physics, Snake, Breakout, Pong) built around testable game state.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0b0a12">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -41,9 +41,9 @@
   <!-- Hero -->
   <section class="hero wrap" id="hero" aria-labelledby="hero-name">
     <div class="hero__text">
-      <p class="hero__role" data-i18n="hero.role">Cloud &amp; AI Engineer</p>
+      <p class="hero__role" data-i18n="hero.role">Software Engineer · AI Agent Evaluation &amp; Game/Simulation Programming</p>
       <h1 class="hero__name" id="hero-name"><span>Adem Berke</span> <span>Nargül</span></h1>
-      <p class="hero__intro" data-i18n="hero.intro">I build backends and cloud infrastructure, and I evaluate how AI models handle real software-engineering work. Away from the cloud I write low-level C and C++: with a teammate at 42 Istanbul I built a raycasting engine in C, and the Lab below runs the same algorithm, rewritten in JavaScript for this site.</p>
+      <p class="hero__intro" data-i18n="hero.intro">I work where AI agent evaluation meets interactive systems. At xAI I designed and evaluated multi-step software-engineering tasks for AI agents, including web-game tasks. I also write games and simulations built to be debugged and checked: fixed-timestep loops, explicit state machines and collision that doesn’t tunnel. The raycaster in the Lab below is the algorithm from Cub3D, a C project I built with a teammate at 42 Istanbul, rewritten in JavaScript.</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#projects" data-i18n="hero.ctaProjects">Projects</a>
         <a class="btn btn--ghost" href="https://github.com/Clas0512" rel="noopener noreferrer" data-i18n="hero.ctaGithub">GitHub</a>
@@ -88,6 +88,11 @@
             <li><span class="keys__k"><kbd data-i18n-attr="aria-label:keys.left" aria-label="Left arrow">←</kbd><kbd data-i18n-attr="aria-label:keys.right" aria-label="Right arrow">→</kbd></span> <span data-i18n="lab.ray.kTurn">turn</span></li>
             <li><span class="keys__k"><span class="keys__word" data-i18n="lab.ray.kIdle">idle</span></span> <span data-i18n="lab.ray.kAuto">autopilot takes over</span></li>
           </ul>
+          <details class="notes">
+            <summary data-i18n="notes.summary">Engineering notes</summary>
+            <p><span class="notes__k" data-i18n="notes.collision">Collision</span> <span data-i18n="lab.ray.nCollision">Movement is resolved one axis at a time, so pushing into a wall at an angle slides along it, and each step is far smaller than a cell, so the player cannot tunnel. Walls use perpendicular distance, which removes the fisheye effect.</span></p>
+            <p><span class="notes__k" data-i18n="notes.verify">Verify</span> <span data-i18n="lab.ray.nVerify">inspect() returns a read-only snapshot: position, angle, autopilot state and ray count.</span></p>
+          </details>
         </div>
       </article>
 
@@ -112,6 +117,11 @@
             <li><span class="keys__k"><kbd>Space</kbd><kbd>Enter</kbd></span> <span data-i18n="lab.verlet.kDrop">drop a ball</span></li>
             <li><span class="keys__k"><kbd>R</kbd></span> <span data-i18n="lab.verlet.kReset">reset the scene</span></li>
           </ul>
+          <details class="notes">
+            <summary data-i18n="notes.summary">Engineering notes</summary>
+            <p><span class="notes__k" data-i18n="notes.stability">Stability</span> <span data-i18n="lab.verlet.nStability">Fixed 120 Hz step with 8 constraint passes, at most 8 steps per frame after a stall, and a hard speed cap.</span></p>
+            <p><span class="notes__k" data-i18n="notes.verify">Verify</span> <span data-i18n="lab.verlet.nVerify">inspect() reports non-finite values, points outside the walls, the deepest circle overlap and the top speed: conditions a test can assert on.</span></p>
+          </details>
         </div>
       </article>
     </div>
@@ -121,7 +131,7 @@
   <section class="section wrap" id="arcade" aria-labelledby="arcade-title">
     <div class="section__head">
       <h2 id="arcade-title" data-i18n="arc.title">Arcade</h2>
-      <p class="section__lede" data-i18n="arc.lede">Three small games written for this site. Each one opens in a viewer and runs in your browser.</p>
+      <p class="section__lede" data-i18n="arc.lede">Three small games written for this site on one shared kit: a fixed 60 Hz simulation loop, a state machine (ready → playing ⇄ paused → game over / won) that refuses illegal transitions, auto-pause when the tab loses focus, and an in-memory fallback when localStorage is blocked. Each one opens in a viewer.</p>
     </div>
 
     <ul class="arcade">
@@ -140,6 +150,11 @@
           <h3 data-i18n="arc.snake.title">Snake</h3>
           <p data-i18n="arc.snake.text">The classic: eat, grow longer, and don't run into yourself.</p>
           <p class="cab__keys"><span class="mono" data-i18n="arc.controls">Controls</span> <span data-i18n="arc.snake.keys">arrow keys or WASD, or swipe</span></p>
+          <details class="notes">
+            <summary data-i18n="notes.summary">Engineering notes</summary>
+            <p><span class="notes__k" data-i18n="notes.edge">Edge cases</span> <span data-i18n="arc.snake.nEdge">Turns are buffered and checked against the last queued direction, so two quick turns both register and a 180° reversal is refused. Moving into the tail cell is legal because it is vacated that tick. Food only spawns on free cells, and a full board ends as a win.</span></p>
+            <p><span class="notes__k" data-i18n="notes.verify">Verify</span> <span data-i18n="arc.snake.nVerify">The rules live in a DOM-free Board with an injectable random source, exposed on window.__game for automated checks.</span></p>
+          </details>
           <button type="button" class="btn btn--primary cab__play" data-game="snake" data-i18n="arc.play" data-i18n-attr="aria-label:arc.snake.playLabel" aria-label="Play Snake">Play</button>
         </div>
       </li>
@@ -160,6 +175,11 @@
           <h3 data-i18n="arc.breakout.title">Breakout</h3>
           <p data-i18n="arc.breakout.text">Bounce the ball off your paddle and clear the wall of bricks.</p>
           <p class="cab__keys"><span class="mono" data-i18n="arc.controls">Controls</span> <span data-i18n="arc.breakout.keys">← → or mouse, touch drag, Space to launch</span></p>
+          <details class="notes">
+            <summary data-i18n="notes.summary">Engineering notes</summary>
+            <p><span class="notes__k" data-i18n="notes.collision">Collision</span> <span data-i18n="arc.breakout.nCollision">The ball moves in sub-steps of at most half its radius and is tested against the closest point on each brick, so it cannot pass through a brick even at top speed.</span></p>
+            <p><span class="notes__k" data-i18n="notes.verify">Verify</span> <span data-i18n="arc.breakout.nVerify">window.__game exposes the ball, bricks, lives, setSpeed, moveBall and loadLevel, so a check can force top speed and step the ball directly.</span></p>
+          </details>
           <button type="button" class="btn btn--primary cab__play" data-game="breakout" data-i18n="arc.play" data-i18n-attr="aria-label:arc.breakout.playLabel" aria-label="Play Breakout">Play</button>
         </div>
       </li>
@@ -177,6 +197,11 @@
           <h3 data-i18n="arc.pong.title">Pong</h3>
           <p data-i18n="arc.pong.text">Two paddles, one ball. You play against the computer.</p>
           <p class="cab__keys"><span class="mono" data-i18n="arc.controls">Controls</span> <span data-i18n="arc.pong.keys">W / S or ↑ / ↓, touch drag; on a tall screen the court turns vertical: ← → or A / D</span></p>
+          <details class="notes">
+            <summary data-i18n="notes.summary">Engineering notes</summary>
+            <p><span class="notes__k" data-i18n="notes.edge">Edge cases</span> <span data-i18n="arc.pong.nEdge">The simulation always runs on a horizontal court; on a tall screen only rendering and input are rotated, and turning the device mid-game pauses it. The computer is imperfect by design: it rechecks the ball a few times a second, aims with random error and has a capped speed.</span></p>
+            <p><span class="notes__k" data-i18n="notes.collision">Collision</span> <span data-i18n="arc.pong.nCollision">Ball sub-steps are capped at half its radius, so it cannot skip over a paddle.</span></p>
+          </details>
           <button type="button" class="btn btn--primary cab__play" data-game="pong" data-i18n="arc.play" data-i18n-attr="aria-label:arc.pong.playLabel" aria-label="Play Pong">Play</button>
         </div>
       </li>
@@ -192,17 +217,18 @@
 
     <ol class="timeline">
       <li class="job">
-        <p class="job__when mono"><time datetime="2026">2026</time></p>
+        <p class="job__when mono"><time datetime="2026-01" data-i18n-date>Jan 2026</time> <span class="dash">–</span> <time datetime="2026-11" data-i18n-date>Nov 2026</time></p>
         <div class="job__body">
           <h3 class="job__role" data-i18n="exp.j1.role">Software Engineer Tutor</h3>
-          <p class="job__org" data-i18n="exp.j1.org">AI research company · US, remote</p>
+          <p class="job__org" data-i18n="exp.j1.org">xAI · US, remote</p>
           <ul class="job__points">
-            <li data-i18n="exp.j1.b1">Write and evaluate complex software-engineering tasks for AI coding agents, including tasks that take advanced models more than 15 minutes of reasoning.</li>
-            <li data-i18n="exp.j1.b2">Review model solutions across languages for correctness, reasoning depth, instruction following and debugging, and work out the correct engineering fix.</li>
-            <li data-i18n="exp.j1.b3">Work with coding agents, computer-control agents and agents that operate everyday software, with a focus on reliability and task completion.</li>
+            <li data-i18n="exp.j1.b1">Authored complex, multi-step software-engineering tasks for coding agents and agentic environments, including tasks that took advanced models more than 15 minutes of reasoning.</li>
+            <li data-i18n="exp.j1.b2">Evaluated agent outputs for correctness, instruction following, code accuracy, reasoning depth and debugging; diagnosed failures and worked out reference solutions.</li>
+            <li data-i18n="exp.j1.b3">Assessed coding, computer-control and software-use agents on interactive applications, with a focus on reliability and task completion.</li>
+            <li data-i18n="exp.j1.b4">Built browser games for web-game tasks for AI agents and checked gameplay behavior and resulting game states against the task requirements.</li>
           </ul>
           <ul class="tags" data-i18n-attr="aria-label:exp.tags" aria-label="Technologies">
-            <li data-i18n="tag.agentEval">Agent evaluation</li><li data-i18n="tag.codeReview">Code review</li><li data-i18n="tag.multiLang">Multi-language</li>
+            <li data-i18n="tag.agentEval">Agent evaluation</li><li data-i18n="tag.codeReview">Code review</li><li data-i18n="tag.multiLang">Multi-language</li><li data-i18n="tag.games">Browser games</li>
           </ul>
         </div>
       </li>
@@ -282,13 +308,27 @@
           <h3>Cub3D</h3>
           <p class="proj__meta mono" data-i18n="proj.cub.meta">42 Istanbul · pair project</p>
         </div>
-        <p data-i18n="proj.cub.text">A raycasting engine built in C with a teammate at 42 Istanbul. Rays step through the map grid with DDA, walls are textured column by column, and every allocation is managed by hand. The raycaster in the Lab above is the same algorithm, rewritten in JavaScript for this site.</p>
+        <p data-i18n="proj.cub.text">A raycaster written in C on MiniLibX with a teammate at 42 Istanbul. Rays step through the map grid with DDA, walls are textured column by column, and every allocation is managed by hand. The raycaster in the Lab above is the same algorithm, rewritten in JavaScript for this site.</p>
         <ul class="tags" data-i18n-attr="aria-label:exp.tags" aria-label="Technologies">
           <li>C</li><li>DDA</li><li>Raycasting</li><li data-i18n="tag.memory">Manual memory</li>
         </ul>
         <p class="proj__links">
           <a class="btn btn--small" href="https://github.com/Clas0512/Cub3D" rel="noopener noreferrer" data-i18n="proj.cub.link">Source on GitHub</a>
           <a class="btn btn--small btn--ghost" href="#lab" data-i18n="proj.cub.lab">Try it in the Lab</a>
+        </p>
+      </article>
+
+      <article class="proj">
+        <div class="proj__head">
+          <h3>so_long</h3>
+          <p class="proj__meta mono" data-i18n="proj.solong.meta">42 Istanbul</p>
+        </div>
+        <p data-i18n="proj.solong.text">A top-down 2D tile-map game in C on MiniLibX: collect every item, then reach the exit, with a move counter. Before a map loads it must be rectangular and enclosed by walls, with exactly one player, one exit and at least one collectible, and a flood fill checks that every collectible and the exit can be reached, so every accepted level is winnable. All memory is managed by hand.</p>
+        <ul class="tags" data-i18n-attr="aria-label:exp.tags" aria-label="Technologies">
+          <li>C</li><li>MiniLibX</li><li>Flood fill</li><li data-i18n="tag.mapValid">Map validation</li><li data-i18n="tag.memory">Manual memory</li>
+        </ul>
+        <p class="proj__links">
+          <a class="btn btn--small" href="https://github.com/Clas0512/42-Solong" rel="noopener noreferrer" data-i18n="proj.cub.link">Source on GitHub</a>
         </p>
       </article>
 
@@ -381,7 +421,8 @@
       <div class="about__skills">
         <h3 class="about__sub" data-i18n="about.skills">Skills</h3>
         <dl class="skills">
-          <div class="skills__row"><dt data-i18n="sk.lang">Programming languages</dt><dd>Python, Go, C++, C</dd></div>
+          <div class="skills__row"><dt data-i18n="sk.lang">Programming languages</dt><dd>C, C++, JavaScript, TypeScript, Python, Go, HTML/CSS</dd></div>
+          <div class="skills__row"><dt data-i18n="sk.games">Games &amp; simulation</dt><dd><span data-i18n="sk.gamesList">Fixed-timestep loops, state machines, 2D collision (sub-stepping, closest point), DDA raycasting, Verlet constraint physics, flood-fill map validation, Canvas 2D, MiniLibX</span></dd></div>
           <div class="skills__row"><dt data-i18n="sk.web">Web &amp; API</dt><dd><span>RESTful APIs, JWT, CORS, CSRF</span><span><span class="skills__lbl" data-i18n="sk.backend">Backend</span> Django, Flask, Gin, Fiber, Goroutines</span><span><span class="skills__lbl" data-i18n="sk.frontend">Frontend</span> React.js, WordPress, Bootstrap, TailwindCSS</span></dd></div>
           <div class="skills__row"><dt data-i18n="sk.cloud">Cloud &amp; infrastructure</dt><dd>AWS (EC2, S3), Azure, Docker, Vagrant, Terraform, Redis, RabbitMQ, K3s, Kubernetes</dd></div>
           <div class="skills__row"><dt data-i18n="sk.devops">DevOps &amp; automation</dt><dd><span data-i18n="sk.devopsList">ArgoCD, Jenkins, Shell/Bash scripting, Ansible</span></dd></div>
@@ -404,10 +445,10 @@
     </div>
 
     <div class="contact__mail">
-      <a class="contact__addr" href="mailto:ademberke@mail.com" data-i18n-attr="aria-label:contact.mailLabel" aria-label="Send an email to ademberke@mail.com">ademberke@mail.com</a>
+      <a class="contact__addr" href="mailto:mrb.bn@hotmail.com" data-i18n-attr="aria-label:contact.mailLabel" aria-label="Send an email to mrb.bn@hotmail.com">mrb.bn@hotmail.com</a>
       <div class="contact__tools">
-        <button type="button" class="btn btn--small" id="copy-mail" data-copy="ademberke@mail.com" data-i18n="contact.copy">Copy address</button>
-        <a class="btn btn--small btn--ghost" href="mailto:ademberke@mail.com" data-i18n="contact.write">Write an email</a>
+        <button type="button" class="btn btn--small" id="copy-mail" data-copy="mrb.bn@hotmail.com" data-i18n="contact.copy">Copy address</button>
+        <a class="btn btn--small btn--ghost" href="mailto:mrb.bn@hotmail.com" data-i18n="contact.write">Write an email</a>
         <span class="contact__status mono" id="copy-status" role="status" aria-live="polite"></span>
       </div>
     </div>

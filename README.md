@@ -1,6 +1,6 @@
 # clas0512.github.io
 
-**EN** · Personal portfolio of Adem Berke Nargül, Cloud & AI Engineer. A single page with experience, projects, a **Lab** of live simulations (raycaster, Verlet physics) and an **Arcade** of small browser games (Snake, Breakout, Pong). Hand-written HTML, CSS and vanilla JavaScript: no framework, no build step, no external requests. Turkish and English.
+**EN** · Personal portfolio of Adem Berke Nargül, software engineer (AI agent evaluation & game/simulation programming). A single page with experience, projects, a **Lab** of live simulations (raycaster, Verlet physics) and an **Arcade** of small browser games (Snake, Breakout, Pong). Hand-written HTML, CSS and vanilla JavaScript: no framework, no build step, no external requests. Turkish and English.
 
 **TR** · Adem Berke Nargül'ün kişisel portfolyo sitesi. Deneyim, projeler, canlı simülasyonların bulunduğu **Lab** (raycaster, Verlet fiziği) ve tarayıcıda oynanan küçük oyunların bulunduğu **Oyunlar** bölümünden oluşan tek sayfalık bir site. HTML, CSS ve saf JavaScript ile elle yazıldı: framework, derleme adımı ya da dış istek yok. Türkçe ve İngilizce.
 
