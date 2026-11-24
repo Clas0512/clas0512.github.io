@@ -88,6 +88,8 @@
 
       'arc.title': 'Arcade',
       'arc.lede': 'Three small games written for this site on one shared kit: a fixed 60 Hz simulation loop, a state machine (ready → playing ⇄ paused → game over / won) that refuses illegal transitions, auto-pause when the tab loses focus, and an in-memory fallback when localStorage is blocked. Each one opens in a viewer.',
+      'arc.testsText': 'The games and Lab demos are covered by automated browser checks (collision, rules, state transitions, physics stability) that run on every push.',
+      'arc.testsLink': 'See the tests',
       'arc.controls': 'Controls',
       'arc.play': 'Play',
       'arc.snake.title': 'Snake',
@@ -288,6 +290,8 @@
 
       'arc.title': 'Oyunlar',
       'arc.lede': 'Bu site için yazılmış üç küçük oyun; hepsi aynı oyun kitini paylaşıyor: sabit 60 Hz simülasyon döngüsü, geçersiz geçişleri reddeden bir durum makinesi (hazır → oynanıyor ⇄ duraklatıldı → bitti / kazanıldı), sekme odağını kaybedince otomatik duraklatma ve localStorage engellenirse bellekte saklama. Her biri ayrı bir pencerede açılır.',
+      'arc.testsText': 'Oyunlar ve Lab demoları, her push’ta çalışan otomatik tarayıcı kontrolleriyle (çarpışma, kurallar, durum geçişleri, fizik kararlılığı) doğrulanıyor.',
+      'arc.testsLink': 'Testlere bakın',
       'arc.controls': 'Kontroller',
       'arc.play': 'Oyna',
       'arc.snake.title': 'Yılan',

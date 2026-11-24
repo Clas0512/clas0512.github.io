@@ -309,6 +309,7 @@ main:focus { outline: none; }
   color: var(--muted);
   padding-bottom: .35rem;
 }
+.section__tests { margin-top: .6rem; font-size: var(--fs-sm); }
 @media (max-width: 760px) {
   .section__head { grid-template-columns: minmax(0, 1fr); }
 }
