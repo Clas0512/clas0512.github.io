@@ -15,10 +15,23 @@ lab/raycaster.js      window.LabDemos.raycaster: the Cub3D algorithm (a 42 Istan
 lab/verlet.js         window.LabDemos.verlet
 games/<name>/index.html   snake, breakout, pong (accept ?lang=tr|en)
 assets/favicon.svg
+tests/               browser checks (node:test + Playwright) / tarayıcı kontrolleri
 .nojekyll             serve files as-is on GitHub Pages / GitHub Pages dosyaları olduğu gibi sunsun
 ```
 
 All scripts are classic scripts (no modules, no build). The shell and Lab files use ES5 style (`var`, IIFE); the games use ES2015+ (`const`, classes, arrow functions). / Tüm betikler klasik betik (modül ya da derleme yok). Kabuk ve Lab dosyaları ES5 tarzında (`var`, IIFE), oyunlar ES2015+ (`const`, sınıflar, ok fonksiyonları) ile yazıldı.
+
+## Checks / Kontroller
+
+`tests/` holds browser checks that load each game and Lab demo in headless Chromium and assert on real game state through the test hooks (`window.__game`, `demo.inspect()`): Snake rules (no 180° reversal, tail-cell move, full-board win, food never on the snake), no tunnelling in Breakout and Pong at top speed, no "ghost saves" from behind a paddle, the state-machine transition table, auto-pause on focus loss, Verlet stability over 30 s of simulated time (no NaN, no escapes, nothing lost) and raycaster wall collision. Time-based checks use Playwright's fake clock, so they are deterministic. They run on every push via GitHub Actions. / `tests/` klasöründeki kontroller her oyunu ve Lab demosunu headless Chromium'da açar ve test kancaları üzerinden gerçek oyun durumunu doğrular. Her push'ta GitHub Actions ile çalışır.
+
+```sh
+npm install
+npx playwright install chromium
+npm test
+```
+
+The site itself still has no dependencies or build step; `package.json` exists only for the checks. / Sitenin kendisinin hâlâ bağımlılığı ya da derleme adımı yok; `package.json` yalnızca kontroller için var.
 
 ## Run locally / Yerelde çalıştırma
 

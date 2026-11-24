@@ -1,0 +1,11 @@
+{
+  "name": "clas0512.github.io",
+  "private": true,
+  "description": "Browser checks for the portfolio's games and simulations. The site itself has no dependencies or build step.",
+  "scripts": {
+    "test": "node --test \"tests/*.test.js\""
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

@@ -131,7 +131,10 @@
   <section class="section wrap" id="arcade" aria-labelledby="arcade-title">
     <div class="section__head">
       <h2 id="arcade-title" data-i18n="arc.title">Arcade</h2>
-      <p class="section__lede" data-i18n="arc.lede">Three small games written for this site on one shared kit: a fixed 60 Hz simulation loop, a state machine (ready → playing ⇄ paused → game over / won) that refuses illegal transitions, auto-pause when the tab loses focus, and an in-memory fallback when localStorage is blocked. Each one opens in a viewer.</p>
+      <div class="section__lede">
+        <p data-i18n="arc.lede">Three small games written for this site on one shared kit: a fixed 60 Hz simulation loop, a state machine (ready → playing ⇄ paused → game over / won) that refuses illegal transitions, auto-pause when the tab loses focus, and an in-memory fallback when localStorage is blocked. Each one opens in a viewer.</p>
+        <p class="section__tests"><span data-i18n="arc.testsText">The games and Lab demos are covered by automated browser checks (collision, rules, state transitions, physics stability) that run on every push.</span> <a href="https://github.com/Clas0512/clas0512.github.io/tree/main/tests" rel="noopener noreferrer" data-i18n="arc.testsLink">See the tests</a></p>
+      </div>
     </div>
 
     <ul class="arcade">
